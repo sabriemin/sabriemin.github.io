@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="tr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Bilgi Makası · TikTok bağlantısı</title>
+<meta name="robots" content="noindex">
+<style>body{font-family:system-ui,sans-serif;background:#141313;color:#E9E7E2;max-width:640px;margin:40px auto;padding:0 16px}
+h1{color:#FCD521}code{display:block;background:#E9E7E2;color:#141313;padding:12px;word-break:break-all;border-radius:6px;font-size:14px}
+button{margin-top:10px;background:#DD2027;color:#fff;border:0;padding:10px 16px;border-radius:6px;font-size:15px}</style></head>
+<body><h1>TikTok bağlantısı</h1><div id="o"></div>
+<script>
+const p=new URLSearchParams(location.search),o=document.getElementById('o');
+if(p.get('code')){o.innerHTML='<p>Giriş başarılı. Aşağıdaki kodu kopyala ve GitHub Secrets\'a <b>TIKTOK_AUTH_CODE</b> adıyla ekle. Kod birkaç dakika içinde geçersiz olur, hemen kullan.</p><code id="c"></code><button onclick="navigator.clipboard.writeText(document.getElementById(\'c\').textContent);this.textContent=\'Kopyalandı\'">Kopyala</button>';
+document.getElementById('c').textContent=p.get('code');}
+else if(p.get('error')){o.textContent='Hata: '+p.get('error')+' '+(p.get('error_description')||'');}
+else{o.innerHTML='<p>Bu sayfa Bilgi Makası\'nın TikTok hesabını bağlamak için kullanılır.</p>';}
+</script></body></html>
